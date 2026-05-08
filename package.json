@@ -1,194 +1,214 @@
 {
-    "name": "mars-mips",
-    "displayName": "MARS MIPS Support for VSCode",
-    "description": "Provides syntax highlighting, semantic highlighting, snippets, and running with MARS MIPS Simulator.",
-    "version": "1.0.4",
-    "publisher": "ahmz1833",
-    "homepage": "https://github.com/ahmz1833/vscode-mars-mips",
-    "icon": "images/icon.png",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ahmz1833/vscode-mars-mips.git"
-    },
-    "engines": {
-        "vscode": "^1.92.0"
-    },
-    "categories": [
-        "Programming Languages",
-        "Snippets",
-        "Formatters"
+  "name": "mars-mips",
+  "displayName": "MARS MIPS Support for VSCode",
+  "description": "Provides syntax highlighting, semantic highlighting, snippets, and running with MARS MIPS Simulator.",
+  "version": "1.1.0",
+  "publisher": "ahmz1833",
+  "homepage": "https://github.com/ahmz1833/vscode-mars-mips",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmz1833/vscode-mars-mips.git"
+  },
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Formatters"
+  ],
+  "keywords": [
+    "vscode",
+    "formatter",
+    "mips",
+    "assembly",
+    "asm"
+  ],
+  "main": "./out/mips",
+  "contributes": {
+    "languages": [
+      {
+        "id": "MIPS",
+        "aliases": [
+          "MIPS Assembly",
+          "Mips",
+          "MIPS"
+        ],
+        "extensions": [
+          ".asm",
+          ".s",
+          ".mips",
+          ".spim"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "keywords": [
-        "vscode",
-        "formatter",
-        "mips",
-        "assembly",
-        "asm"
+    "grammars": [
+      {
+        "language": "MIPS",
+        "scopeName": "source.mips",
+        "path": "./syntaxes/mips.tmLanguage.json"
+      }
     ],
-    "main": "./out/mips",
-    "contributes": {
-        "languages": [
-            {
-                "id": "MIPS",
-                "aliases": [
-                    "MIPS Assembly",
-                    "Mips",
-                    "MIPS"
-                ],
-                "extensions": [
-                    ".asm",
-                    ".s",
-                    ".mips",
-                    ".spim"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "MIPS",
-                "scopeName": "source.mips",
-                "path": "./syntaxes/mips.tmLanguage.json"
-            }
-        ],
-        "snippets": [
-            {
-                "language": "MIPS",
-                "path": "./snippets/mips.json"
-            }
-        ],
-        "semanticTokenScopes": [
-            {
-                "scopes": {
-                    "label": [
-                        "support.class.label.mips"
-                    ],
-                    "constant": [
-                        "entity.name.function.constant.mips"
-                    ]
-                }
-            }
-        ],
-        "configuration": {
-            "title": "MARS MIPS Support for VSCode",
-            "properties": {
-                "mars-mips.autoIndentAfterInstructionCompletion": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Automatically indent after completing an instruction."
-                },
-                "mars-mips.snippetCommentColumn": {
-                    "type": "integer",
-                    "default": 32,
-                    "minimum": 0,
-                    "description": "Column at which to align comments in snippets. The column is calculated as an offset from the starting column of the snippet.\nShould be a multiple of the tab size, which for mips should be 8."
-                }
-            }
-        },
-        "commands": [
-            {
-                "command": "mars-mips.assembleExec",
-                "title": "Assemble and run",
-                "icon": "$(run)"
-            },
-            {
-                "command": "mars-mips.assembleMips",
-                "title": "Assemble",
-                "icon": "$(test-view-icon)"
-            },
-            {
-                "command": "mars-mips.debugMips",
-                "title": "Debug (Run with extra info)",
-                "icon": "$(debug-alt)"
-            },
-            {
-                "command": "mars-mips.openMars",
-                "title": "Open Mars",
-                "icon": "$(project)"
-            }
-        ],
-        "keybindings": [
-            {
-                "command": "mars-mips.assembleExec",
-                "key": "F5",
-                "when": "resourceLangId == MIPS"
-            },
-            {
-                "command": "mars-mips.assembleMips",
-                "key": "F4",
-                "when": "resourceLangId == MIPS"
-            },
-            {
-                "command": "mars-mips.debugMips",
-                "key": "F6",
-                "when": "resourceLangId == MIPS"
-            },
-            {
-                "command": "mars-mips.openMars",
-                "key": "F7",
-                "when": "resourceLangId == MIPS"
-            }
-        ],
-        "menus": {
-            "editor/title": [
-                {
-                    "command": "mars-mips.assembleMips",
-                    "group": "navigation",
-                    "when": "resourceLangId == MIPS"
-                },
-                {
-                    "command": "mars-mips.openMars",
-                    "group": "navigation",
-                    "when": "resourceLangId == MIPS"
-                }
-            ],
-            "editor/title/run": [
-                {
-                    "command": "mars-mips.assembleExec",
-                    "group": "1_run",
-                    "when": "resourceLangId == MIPS"
-                },
-                {
-                    "command": "mars-mips.debugMips",
-                    "group": "1_run",
-                    "when": "resourceLangId == MIPS"
-                }
-            ]
+    "snippets": [
+      {
+        "language": "MIPS",
+        "path": "./snippets/mips.json"
+      }
+    ],
+    "semanticTokenScopes": [
+      {
+        "scopes": {
+          "label": [
+            "support.class.label.mips"
+          ],
+          "constant": [
+            "entity.name.function.constant.mips"
+          ]
         }
-    },
-    "capabilities": {
-        "hoverProvider": true,
-        "completionProvider": {
-            "resolveProvider": true
+      }
+    ],
+    "configuration": {
+      "title": "MARS MIPS Support for VSCode",
+      "properties": {
+        "mars-mips.marsPath": {
+          "order": 1,
+          "type": "string",
+          "default": "",
+          "description": "Path to the MARS simulator JAR file. Leave empty to use the JAR bundled with the extension."
         },
-        "definitionProvider": true,
-        "referencesProvider": true,
-        "documentSymbolProvider": true,
-        "renameProvider": true,
-        "semanticTokensProvider": true
+        "mars-mips.javaCommand": {
+          "order": 2,
+          "type": "string",
+          "default": "java",
+          "description": "Command used to invoke Java when running MARS, used by the 'Open MARS' command."
+        },
+        "mars-mips.terminalJavaCommand": {
+          "order": 3,
+          "type": "string",
+          "default": "",
+          "description": "Command used to invoke Java in the terminal for assemble/run/debug commands. Leave empty to use the same value as 'Java Command'."
+        },
+        "mars-mips.autoIndentAfterInstructionCompletion": {
+          "order": 4,
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically indent after completing an instruction."
+        },
+        "mars-mips.snippetCommentColumn": {
+          "order": 5,
+          "type": "integer",
+          "default": 32,
+          "minimum": 0,
+          "description": "Column at which to align comments in snippets. The column is calculated as an offset from the starting column of the snippet.\nShould be a multiple of the tab size, which for mips should be 8."
+        }
+      }
     },
-    "packageManager": "pnpm@11.0.8+sha512.4c4097e1dd2d42372c4e7fa5a791ff28fc75a484c7ac192e64b1df0fdef17594ba982f9b4fed9adfb3c757846f565b799b2763fb3733d1de1bcb82cf46684912",
-    "scripts": {
-        "vscode:prepublish": "npm run package",
-        "compile": "webpack",
-        "watch": "webpack --watch",
-        "package": "webpack --mode production --devtool hidden-source-map",
-        "compile-tests": "tsc -p . --outDir out",
-        "watch-tests": "tsc -p . -w --outDir out",
-        "pretest": "npm run compile-tests && npm run compile && npm run lint",
-        "lint": "eslint src --ext ts",
-        "test": "node ./out/test/runTest.js"
-    },
-    "devDependencies": {
-        "@types/mocha": "^10.0.2",
-        "@types/node": "^22.1.0",
-        "@types/vscode": "^1.92.0",
-        "@vscode/test-electron": "^2.3.4",
-        "eslint": "^9.0.0",
-        "prettier": "^3.3.3",
-        "typescript": "^5.5.4",
-        "ts-loader": "^9.4.4",
-        "webpack": "^5.95.0",
-        "webpack-cli": "^5.1.4"
+    "commands": [
+      {
+        "command": "mars-mips.assembleExec",
+        "title": "MIPS: Assemble and run",
+        "icon": "$(run)"
+      },
+      {
+        "command": "mars-mips.assembleMips",
+        "title": "MIPS: Assemble",
+        "icon": "$(test-view-icon)"
+      },
+      {
+        "command": "mars-mips.debugMips",
+        "title": "MIPS: Debug (Run with extra info)",
+        "icon": "$(debug-alt)"
+      },
+      {
+        "command": "mars-mips.openMars",
+        "title": "MIPS: Open Mars",
+        "icon": "$(project)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "mars-mips.assembleExec",
+        "key": "F5",
+        "when": "resourceLangId == MIPS"
+      },
+      {
+        "command": "mars-mips.assembleMips",
+        "key": "F4",
+        "when": "resourceLangId == MIPS"
+      },
+      {
+        "command": "mars-mips.debugMips",
+        "key": "F6",
+        "when": "resourceLangId == MIPS"
+      },
+      {
+        "command": "mars-mips.openMars",
+        "key": "F7",
+        "when": "resourceLangId == MIPS"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "mars-mips.assembleMips",
+          "group": "navigation",
+          "when": "resourceLangId == MIPS"
+        },
+        {
+          "command": "mars-mips.openMars",
+          "group": "navigation",
+          "when": "resourceLangId == MIPS"
+        }
+      ],
+      "editor/title/run": [
+        {
+          "command": "mars-mips.assembleExec",
+          "group": "1_run",
+          "when": "resourceLangId == MIPS"
+        },
+        {
+          "command": "mars-mips.debugMips",
+          "group": "1_run",
+          "when": "resourceLangId == MIPS"
+        }
+      ]
     }
+  },
+  "capabilities": {
+    "hoverProvider": true,
+    "completionProvider": {
+      "resolveProvider": true
+    },
+    "definitionProvider": true,
+    "referencesProvider": true,
+    "documentSymbolProvider": true,
+    "renameProvider": true,
+    "semanticTokensProvider": true
+  },
+  "packageManager": "pnpm@11.0.8+sha512.4c4097e1dd2d42372c4e7fa5a791ff28fc75a484c7ac192e64b1df0fdef17594ba982f9b4fed9adfb3c757846f565b799b2763fb3733d1de1bcb82cf46684912",
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.2",
+    "@types/node": "^22.1.0",
+    "@types/vscode": "^1.92.0",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "ts-loader": "^9.4.4",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  }
 }

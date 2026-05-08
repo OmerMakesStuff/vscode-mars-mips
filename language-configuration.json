@@ -1,31 +1,27 @@
 {
-    "comments": {
-        "lineComment": "#",
-    },
-    "onEnterRules": [
-        {
-          "beforeText": "^(?!#).*?(?=:)|\\.macro\\s+\\w+|.data",
-          "action": { "indent": "indent" }
-        }
-      ],
-    // symbols used as brackets
-    "brackets": [
-        ["(", ")"]
-    ],
-    // symbols that are auto closed when typing
-    "autoClosingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
-    ],
-    // symbols that can be used to surround a selection
-    "surroundingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
-    ]
+  "comments": { "lineComment": "#" },
+  "onEnterRules": [
+    {
+      "beforeText": "^(?!#).*?(?=:)|\\.macro\\s+\\w+|.data",
+      "action": { "indent": "indent" }
+    }
+  ],
+  // symbols used as brackets
+  "brackets": [["(", ")"]],
+  // symbols that are auto closed when typing
+  "autoClosingPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["\"", "\""],
+    ["'", "'"]
+  ],
+  // symbols that can be used to surround a selection
+  "surroundingPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["\"", "\""],
+    ["'", "'"]
+  ]
 }

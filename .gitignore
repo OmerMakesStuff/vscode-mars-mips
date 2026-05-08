@@ -3,3 +3,4 @@ test_workspace/
 out/
 node_modules/
 build/
+*.vsix
