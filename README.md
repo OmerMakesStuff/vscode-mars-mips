@@ -30,9 +30,9 @@ Support for navigating definitions and usages of labels and constants through VS
 
 ### Running code with MARS
 
-Run your MIPS code using the MARS simulator by pressing `F5`. You can also run with extra info using `F6`.
+Run your MIPS code using the MARS simulator directly from VS Code by pressing `F5`. You can also run with extra info using `F6`.
 
-If you just want to open the MARS simulator GUI and run your code there, you can use `F7` (MARS is included with this extension).
+If you just want to open the MARS simulator GUI and run your code there, you can use `F7` - MARS is included with this extension.
 
 ### Formatting
 
