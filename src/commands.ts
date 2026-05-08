@@ -40,6 +40,15 @@ function getJavaCommand(): string {
 }
 
 /**
+ * Gets the Java command to use inside the terminal (for assemble/run/debug).
+ * @returns The Java command string.
+ */
+function getTerminalJavaCommand(): string {
+    const terminalJavaCommand: string | undefined = vscode.workspace.getConfiguration("mars-mips").get("terminalJavaCommand");
+    return terminalJavaCommand || getJavaCommand();
+}
+
+/**
  * Gets the MARS terminal.
  * @returns The MARS terminal.
  */
@@ -57,14 +66,15 @@ function getMarsTerminal(): vscode.Terminal {
  */
 export function registerCommands(context: vscode.ExtensionContext) {
     const marsPath: string = getMarsPath();
-    const javaCommand: string = getJavaCommand();
+    const javaCommand: string = getJavaCommand(),
+        terminalJavaCommand: string = getTerminalJavaCommand();
 
     let disposable = vscode.commands.registerCommand('mars-mips.assembleExec', () => {
         const fileName = getActiveFilePath();
         let terminal = getMarsTerminal();
 
         // Assemble and execute
-        terminal.sendText(`${javaCommand} -jar ${marsPath} nc me "${fileName}"`);
+        terminal.sendText(`${terminalJavaCommand} -jar ${marsPath} nc me "${fileName}"`);
         terminal.show();
     });
 
@@ -73,7 +83,7 @@ export function registerCommands(context: vscode.ExtensionContext) {
         let terminal = getMarsTerminal();
 
         // Assemble but don't execute
-        terminal.sendText(`${javaCommand} -jar ${marsPath} me a "${fileName}"`);
+        terminal.sendText(`${terminalJavaCommand} -jar ${marsPath} me a "${fileName}"`);
         terminal.show();
     });
 
@@ -81,7 +91,7 @@ export function registerCommands(context: vscode.ExtensionContext) {
         const fileName = getActiveFilePath();
         let terminal = getMarsTerminal();
 
-        terminal.sendText(`${javaCommand} -jar ${marsPath} nc me d "${fileName}"`);
+        terminal.sendText(`${terminalJavaCommand} -jar ${marsPath} nc me d "${fileName}"`);
         terminal.show();
     });
 

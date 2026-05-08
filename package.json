@@ -80,7 +80,12 @@
                 "mars-mips.javaCommand": {
                     "type": "string",
                     "default": "java",
-                    "description": "Command used to invoke Java when running MARS."
+                    "description": "Command used to invoke Java when running MARS, used by the 'Open MARS' command."
+                },
+                "mars-mips.terminalJavaCommand": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Command used to invoke Java in the terminal for assemble/run/debug commands. Leave empty to use the same value as 'Java Command'."
                 },
                 "mars-mips.autoIndentAfterInstructionCompletion": {
                     "type": "boolean",
