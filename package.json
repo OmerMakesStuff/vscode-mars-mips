@@ -77,6 +77,11 @@
                     "default": "",
                     "description": "Path to the MARS simulator JAR file. Leave empty to use the JAR bundled with the extension."
                 },
+                "mars-mips.javaCommand": {
+                    "type": "string",
+                    "default": "java",
+                    "description": "Command used to invoke Java when running MARS."
+                },
                 "mars-mips.autoIndentAfterInstructionCompletion": {
                     "type": "boolean",
                     "default": false,

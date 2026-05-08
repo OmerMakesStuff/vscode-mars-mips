@@ -31,6 +31,15 @@ function getMarsPath(): string {
 }
 
 /**
+ * Gets the Java command used for running MARS.
+ * @returns The Java command, including arguments if any.
+ */
+function getJavaCommand(): string {
+    const javaCommand: string | undefined = vscode.workspace.getConfiguration("mars-mips").get("javaCommand");
+    return javaCommand || "java";
+}
+
+/**
  * Gets the MARS terminal.
  * @returns The MARS terminal.
  */
@@ -48,13 +57,14 @@ function getMarsTerminal(): vscode.Terminal {
  */
 export function registerCommands(context: vscode.ExtensionContext) {
     const marsPath: string = getMarsPath();
+    const javaCommand: string = getJavaCommand();
 
     let disposable = vscode.commands.registerCommand('mars-mips.assembleExec', () => {
         const fileName = getActiveFilePath();
         let terminal = getMarsTerminal();
 
         // Assemble and execute
-        terminal.sendText(`java -jar ${marsPath} nc me "${fileName}"`);
+        terminal.sendText(`${javaCommand} -jar ${marsPath} nc me "${fileName}"`);
         terminal.show();
     });
 
@@ -63,7 +73,7 @@ export function registerCommands(context: vscode.ExtensionContext) {
         let terminal = getMarsTerminal();
 
         // Assemble but don't execute
-        terminal.sendText(`java -jar ${marsPath} me a "${fileName}"`);
+        terminal.sendText(`${javaCommand} -jar ${marsPath} me a "${fileName}"`);
         terminal.show();
     });
 
@@ -71,12 +81,12 @@ export function registerCommands(context: vscode.ExtensionContext) {
         const fileName = getActiveFilePath();
         let terminal = getMarsTerminal();
 
-        terminal.sendText(`java -jar ${marsPath} nc me d "${fileName}"`);
+        terminal.sendText(`${javaCommand} -jar ${marsPath} nc me d "${fileName}"`);
         terminal.show();
     });
 
     let openMars = vscode.commands.registerCommand("mars-mips.openMars", () => {
-        exec(`java -jar ${marsPath}`, (err: any, stdout: string, stderr: string) => {
+        exec(`${javaCommand} -jar ${marsPath}`, (err: any, stdout: string, stderr: string) => {
             if (err) {
                 vscode.window.showErrorMessage(`Error: ${stderr}`);
                 return;
