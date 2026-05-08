@@ -73,26 +73,31 @@
             "title": "MARS MIPS Support for VSCode",
             "properties": {
                 "mars-mips.marsPath": {
+                    "order": 1,
                     "type": "string",
                     "default": "",
                     "description": "Path to the MARS simulator JAR file. Leave empty to use the JAR bundled with the extension."
                 },
                 "mars-mips.javaCommand": {
+                    "order": 2,
                     "type": "string",
                     "default": "java",
                     "description": "Command used to invoke Java when running MARS, used by the 'Open MARS' command."
                 },
                 "mars-mips.terminalJavaCommand": {
+                    "order": 3,
                     "type": "string",
                     "default": "",
                     "description": "Command used to invoke Java in the terminal for assemble/run/debug commands. Leave empty to use the same value as 'Java Command'."
                 },
                 "mars-mips.autoIndentAfterInstructionCompletion": {
+                    "order": 4,
                     "type": "boolean",
                     "default": false,
                     "description": "Automatically indent after completing an instruction."
                 },
                 "mars-mips.snippetCommentColumn": {
+                    "order": 5,
                     "type": "integer",
                     "default": 32,
                     "minimum": 0,
