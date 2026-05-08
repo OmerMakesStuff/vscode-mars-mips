@@ -108,22 +108,22 @@
     "commands": [
       {
         "command": "mars-mips.assembleExec",
-        "title": "Assemble and run",
+        "title": "MIPS: Assemble and run",
         "icon": "$(run)"
       },
       {
         "command": "mars-mips.assembleMips",
-        "title": "Assemble",
+        "title": "MIPS: Assemble",
         "icon": "$(test-view-icon)"
       },
       {
         "command": "mars-mips.debugMips",
-        "title": "Debug (Run with extra info)",
+        "title": "MIPS: Debug (Run with extra info)",
         "icon": "$(debug-alt)"
       },
       {
         "command": "mars-mips.openMars",
-        "title": "Open Mars",
+        "title": "MIPS: Open Mars",
         "icon": "$(project)"
       }
     ],
