@@ -41,6 +41,21 @@ Support for navigating definitions and usages of labels and constants through vi
 
 - No support for multi-file projects
 
+## Building
+
+To contribute to or modify the extension, first clone the repository, install dependencies, and open in VSCode:
+
+```
+git clone https://github.com/OmerMakesStuff/vscode-mars-mips/
+cd vscode-mars-mips
+pnpm i
+code .
+```
+
+Then, inside VSCode, press `F5`. This will compile and run the extension in a new Extension Development Host window.
+
+For information on packaging and distributing the extension, see the [VSCode docs](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
+
 ## Used Repositories
 
 - **Based on : [MIPSy Support](https://github.com/Bahnschrift/vscode-mipsy-support)**
