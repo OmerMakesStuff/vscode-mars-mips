@@ -60,6 +60,7 @@ For information on packaging and distributing the extension, see the [VSCode doc
 ## Credits
 
 - **Based on [Bahnschrift/vscode-mipsy-support](https://github.com/Bahnschrift/vscode-mipsy-support)**
+- Fork of [ahmz1833/vscode-mars-mips](https://github.com/ahmz1833/vscode-mars-mips)
 - Formatter: [AngaBlue/asm-formatter](https://github.com/AngaBlue/asm-formatter)
 - Run menu and commands, MARS package: [riciopo/vscode-mips](https://github.com/triciopo/vscode-mips)
 - Also using [duskmoon314/vscode-mips-mars](https://github.com/duskmoon314/vscode-mips-mars) and [Cheuring/mpis-lauguage-support](https://github.com/Cheuring/mpis-lauguage-support)
