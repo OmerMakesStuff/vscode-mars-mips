@@ -17,17 +17,25 @@ Enjoy a seamless development experience with enhanced features and improved work
 
 Semantic syntax highlighting only colourizes labels and constants that are defined elsewhere in the document.
 
+![Syntax](./images/syntax.gif)
+
 ### Code Completion
 
 Context-aware code completion for instructions, directives, instructions, labels, and constants.
+
+![Completion](./images/completion.gif)
 
 ### Snippets
 
 Snippets with configurable comment indentation for all mipsy-supported syscalls.
 
+![Snippets](./images/snippets.gif)
+
 ### Label & Constant Definitions / References
 
 Support for navigating definitions and usages of labels and constants through visual studio code's UI.
+
+![Definitions](./images/definitions.gif)
 
 ## Known Issues
 
