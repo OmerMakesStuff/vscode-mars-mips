@@ -23,7 +23,9 @@ function getMarsPath(): string {
     .getConfiguration('mars-mips')
     .get('marsPath');
   if (!marsPath) {
-    let marsExtension = vscode.extensions.getExtension('ahmz1833.mars-mips');
+    let marsExtension = vscode.extensions.getExtension(
+      'OmerMakesStuff.mars-mips',
+    );
     marsPath = marsExtension ? marsExtension.extensionPath + '/mars.jar' : '';
     if (!fs.existsSync(marsPath)) {
       console.log(
