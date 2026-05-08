@@ -2,7 +2,7 @@
   "name": "mars-mips",
   "displayName": "MARS MIPS Support for VSCode",
   "description": "Provides syntax highlighting, semantic highlighting, snippets, and running with MARS MIPS Simulator.",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "publisher": "ahmz1833",
   "homepage": "https://github.com/ahmz1833/vscode-mars-mips",
   "icon": "images/icon.png",
