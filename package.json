@@ -72,6 +72,11 @@
         "configuration": {
             "title": "MARS MIPS Support for VSCode",
             "properties": {
+                "mars-mips.marsPath": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Path to the MARS simulator JAR file. Leave empty to use the JAR bundled with the extension."
+                },
                 "mars-mips.autoIndentAfterInstructionCompletion": {
                     "type": "boolean",
                     "default": false,
